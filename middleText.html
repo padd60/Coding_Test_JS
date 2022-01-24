@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+        let str_arr = s.split("");
+
+        console.log(str_arr);
+
+        if (str_arr.length % 2 !== 0) {
+          let middle = Math.floor(str_arr.length / 2);
+
+          answer = str_arr[middle];
+        } else {
+          let middle = Math.floor(str_arr.length / 2);
+
+          answer = str_arr[middle - 1] + str_arr[middle];
+        }
+
+        return answer;
+      }
+      console.log(solution("study"));
+      console.log(solution("good"));
+      console.log(solution("coffee"));
+    </script>
+  </body>
+</html>
