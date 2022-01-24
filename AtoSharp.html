@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = "";
+
+        let str_arr = str.split("");
+
+        console.log(str_arr);
+
+        let str_arr_change = str_arr.map((item, index) => {
+          if (item === "A") {
+            return "#";
+          } else {
+            return item;
+          }
+        });
+
+        let str_change = str_arr_change.join("");
+
+        console.log(str_change);
+
+        answer = str_change;
+
+        return answer;
+      }
+
+      let str = "BANANA";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>

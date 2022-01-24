@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+
+        let textArr = s.map((item, index) => {
+          let arr = item.split("");
+          return arr.length;
+        });
+
+        max = Math.max(...textArr);
+
+        max_index = textArr.findIndex((item, index) => item === max);
+
+        answer = s[max_index];
+
+        return answer;
+      }
+      let str = ["teacher", "time", "student", "beautiful", "good"];
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
