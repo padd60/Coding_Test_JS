@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        let answer;
+
+        let max = Number.MIN_SAFE_INTEGER;
+
+        let maxNum = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+          let number_arr = arr[i].toString().split("");
+
+          let sum_digit = number_arr.reduce((acc, item) => {
+            return parseInt(acc) + parseInt(item);
+          });
+
+          if (sum_digit === max) {
+            maxNum = Math.max(maxNum, arr[i]);
+          } else if (max < sum_digit) {
+            max = sum_digit;
+            maxNum = arr[i];
+          }
+        }
+
+        answer = maxNum;
+
+        return answer;
+      }
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, arr));
+    </script>
+  </body>
+</html>
