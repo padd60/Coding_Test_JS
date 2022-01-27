@@ -1,0 +1,84 @@
+<!-- map 객체를 사용해서 푸는거임... 그래도 풀었다...! -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+
+        let new_arr = [];
+
+        let s_arr = s.split("");
+
+        s_arr.sort();
+
+        console.log(s_arr);
+
+        let temp = [s_arr[0]];
+
+        for (let i = 1; i < s_arr.length; i++) {
+          if (s_arr[i - 1] === s_arr[i]) {
+            temp.push(s_arr[i]);
+          } else {
+            new_arr.push(temp);
+            temp = [s_arr[i]];
+          }
+        }
+
+        console.log(new_arr);
+
+        let max = 0;
+        let student;
+
+        for (let i of new_arr) {
+          if (max < i.length) {
+            max = i.length;
+            student = i[0];
+          }
+        }
+
+        answer = student;
+
+        return answer;
+      }
+
+      let str = "BACBACCACCBDEDE";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
+
+<!-- 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                let sH = new Map();
+                for(let x of s){
+                    if(sH.has(x)) sH.set(x, sH.get(x)+1);
+                    else sH.set(x, 1);
+                }
+                let max=Number.MIN_SAFE_INTEGER;
+                for(let [key, val] of sH){
+                    if(val>max){
+                        max=val;
+                        answer=key;
+                    }
+                }
+                return answer;
+            }
+
+            let str="BACBACCACCBDEDE";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+-->
