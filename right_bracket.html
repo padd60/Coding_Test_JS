@@ -1,0 +1,66 @@
+<!-- 카운터로 풀기 
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+
+        let cnt1 = 0;
+        let cnt2 = 0;
+
+        for (let i of s) {
+          if (i === "(") {
+            cnt1++;
+          } else if (i === ")") {
+            cnt2++;
+          }
+        }
+
+        cnt1 === cnt2 ? (answer = "YES") : (answer = "NO");
+
+        return answer;
+      }
+
+      let a = "(()(()))(()";
+      console.log(solution(a));
+    </script>
+  </body>
+</html> -->
+
+<!-- 스택으로 풀기 -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+
+        let stack = [];
+
+        for (let i of s) {
+          if (i === "(") {
+            stack.push(i);
+          } else if (i === ")") {
+            stack.pop(i);
+          }
+        }
+
+        console.log(stack);
+
+        stack.length > 0 ? (answer = "No") : (answer = "YES");
+
+        return answer;
+      }
+
+      let a = "(()(()))(()";
+      console.log(solution(a));
+    </script>
+  </body>
+</html>

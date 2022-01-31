@@ -1,0 +1,33 @@
+<!-- 생각한 큐로직을 코드로 구현하지 못함;;; -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, k) {
+        let answer;
+        let que = [];
+
+        for (let i = 1; i <= n; i++) {
+          que.push(i);
+        }
+
+        while (que.length) {
+          for (let i = 0; i < k - 1; i++) {
+            que.push(que.shift());
+          }
+          que.shift();
+          if (que.length === 1) answer = que.shift();
+        }
+
+        console.log(que);
+
+        return answer;
+      }
+
+      console.log(solution(8, 3));
+    </script>
+  </body>
+</html>
